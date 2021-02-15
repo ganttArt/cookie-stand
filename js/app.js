@@ -1,6 +1,7 @@
 'use strict';
 
 let seattle = {
+  location: 'Seattle',
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   averageCookiesPerCustomer: 6.3,
@@ -11,6 +12,7 @@ let seattle = {
 };
 
 let tokyo = {
+  location: 'Tokyo',
   minHourlyCustomers: 3,
   maxHourlyCustomers: 24,
   averageCookiesPerCustomer: 1.2,
@@ -21,6 +23,7 @@ let tokyo = {
 };
 
 let dubai = {
+  location: 'Dubai',
   minHourlyCustomers: 11,
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 3.7,
@@ -31,6 +34,7 @@ let dubai = {
 };
 
 let paris = {
+  location: 'Paris',
   minHourlyCustomers: 20,
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 2.3,
@@ -41,6 +45,7 @@ let paris = {
 };
 
 let lima = {
+  location: 'Lima',
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
   averageCookiesPerCustomer: 4.6,
