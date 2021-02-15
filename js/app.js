@@ -50,15 +50,18 @@ let lima = {
   },
 };
 
-let stores = [seattle, tokyo, dubai, paris, lima];
-
 function populateHourlyCookiesSold(store) {
   for (let i = 0; i < 14; i++) {
     let customers = store.randomCustomersPerHour();
     let cookiesSold = Math.floor(customers * store.averageCookiesPerCustomer);
-    seattle.hourlyCookiesSold.push(cookiesSold);
+    store.hourlyCookiesSold.push(cookiesSold);
   }
 }
 
-populateHourlyCookiesSold(seattle);
-console.log(seattle);
+let stores = [seattle, tokyo, dubai, paris, lima];
+
+for (let i = 0; i < stores.length; i++) {
+  populateHourlyCookiesSold(stores[i]);
+}
+
+console.log(stores);
