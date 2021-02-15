@@ -6,6 +6,7 @@ let seattle = {
   maxHourlyCustomers: 65,
   averageCookiesPerCustomer: 6.3,
   hourlyCookiesSold: [],
+  totalCookiesSold: 0,
   randomCustomersPerHour: function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
@@ -17,6 +18,7 @@ let tokyo = {
   maxHourlyCustomers: 24,
   averageCookiesPerCustomer: 1.2,
   hourlyCookiesSold: [],
+  totalCookiesSold: 0,
   randomCustomersPerHour: function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
@@ -28,6 +30,7 @@ let dubai = {
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 3.7,
   hourlyCookiesSold: [],
+  totalCookiesSold: 0,
   randomCustomersPerHour: function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
@@ -39,6 +42,7 @@ let paris = {
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 2.3,
   hourlyCookiesSold: [],
+  totalCookiesSold: 0,
   randomCustomersPerHour: function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
@@ -50,6 +54,7 @@ let lima = {
   maxHourlyCustomers: 16,
   averageCookiesPerCustomer: 4.6,
   hourlyCookiesSold: [],
+  totalCookiesSold: 0,
   randomCustomersPerHour: function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
@@ -60,6 +65,7 @@ function populateHourlyCookiesSold(store) {
     let customers = store.randomCustomersPerHour();
     let cookiesSold = Math.floor(customers * store.averageCookiesPerCustomer);
     store.hourlyCookiesSold.push(cookiesSold);
+    store.totalCookiesSold += cookiesSold;
   }
 }
 
