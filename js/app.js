@@ -1,7 +1,7 @@
 'use strict';
 
 let timeSlots = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-let hourlyTotals = [];
+let hourlyTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const table = document.getElementById('hourly-sales-table');
 
 function CookieStore(location, minHourlyCustomers, maxHourlyCustomers, averageCookiesPerCustomer) {
@@ -73,8 +73,34 @@ function renderTableHeader() {
   tableHead.appendChild(locationTotalTh);
 }
 
+function renderTableFooter() {
+  let row = document.createElement('tr');
+  table.appendChild(row);
+
+  let footerHead = document.createElement('th');
+  footerHead.setAttribute('scope', 'row');
+  footerHead.textContent = 'Totals';
+  row.appendChild(footerHead);
+
+  let allLocationTotal = 0;
+  for (let i = 0; i < timeSlots.length; i++) {
+    for (let j = 0; j < stores.length; j++) {
+      let hourlyTotal = stores[j].hourlyCookiesSold[i];
+      hourlyTotals[i] += hourlyTotal;
+      allLocationTotal += hourlyTotal;
+    }
+    let td = document.createElement('td');
+    td.textContent = hourlyTotals[i];
+    row.appendChild(td);
+  }
+
+  let allLocationTotalElem = document.createElement('td');
+  allLocationTotalElem.textContent = allLocationTotal;
+  row.appendChild(allLocationTotalElem);
+}
+
 renderTableHeader();
 for (let i = 0; i < stores.length; i++) {
   stores[i].renderTableRow();
 }
-// renderTableFooter();
+renderTableFooter();
