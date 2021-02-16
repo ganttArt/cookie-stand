@@ -2,6 +2,18 @@
 
 let timeSlots = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+function CookieStore(location, minHourlyCustomers, maxHourlyCustomers, averageCookiesPerCustomer) {
+  this.location = location;
+  this.minHourlyCustomers = minHourlyCustomers;
+  this.maxHourlyCustomers = maxHourlyCustomers;
+  this.averageCookiesPerCustomer = averageCookiesPerCustomer;
+  this.hourlyCookiesSold = [];
+  this.totalCookiesSold = 0;
+  this.randomCustomersPerHour = function() {
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+  };
+}
+
 let seattle = {
   location: 'Seattle',
   minHourlyCustomers: 23,
