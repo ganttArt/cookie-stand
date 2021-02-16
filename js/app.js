@@ -1,6 +1,7 @@
 'use strict';
 
 let timeSlots = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+// let hourlyTotals = [];
 
 function CookieStore(location, minHourlyCustomers, maxHourlyCustomers, averageCookiesPerCustomer) {
   this.location = location;
@@ -25,6 +26,10 @@ CookieStore.prototype.populateHourlyCookiesSold = function() {
   }
 };
 
+// CookieStore.prototype.renderTableRow = function() {
+  
+// }
+
 let seattle = new CookieStore('Seattle', 23, 65, 6.3);
 let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
 let dubai = new CookieStore('Dubai', 11, 38, 3.7);
@@ -33,33 +38,23 @@ let lima = new CookieStore('Lima', 2, 16, 4.6);
 
 let stores = [seattle, tokyo, dubai, paris, lima];
 
-// function for class06 to display sotre data in unordered lists
-function displayStoreData(store) {
-  let articleDeckElem = document.getElementById('article-deck');
-  let articleElem = document.createElement('article');
-  articleDeckElem.appendChild(articleElem);
+function renderTableHeader() {
+  const table = document.getElementById('hourly-sales-table');
+  const tableHead = document.createElement('tr');
+  table.appendChild(tableHead);
+  tableHead.appendChild(document.createElement('th')); //Empty th element
 
-  let nameHeaderElem = document.createElement('h2');
-  articleElem.appendChild(nameHeaderElem);
-  nameHeaderElem.textContent = store.location;
-
-  let salesUlElem = document.createElement('ul');
-  articleElem.appendChild(salesUlElem);
-
-  for (let i = 0; i < 14; i++){
-    let hourlySales = `${timeSlots[i]}: ${store.hourlyCookiesSold[i]} cookies`;
-    let hourlySalesElem = document.createElement('li');
-    hourlySalesElem.textContent = hourlySales;
-    salesUlElem.appendChild(hourlySalesElem);
+  for (let i = 0; i < timeSlots.length; i++) {
+    let th = document.createElement('th');
+    th.setAttribute('scope', 'col');
+    th.textContent = timeSlots[i];
+    tableHead.appendChild(th);
   }
 
-  let totalSalesElem = document.createElement('li');
-  totalSalesElem.textContent = `Total: ${store.totalCookiesSold} cookies`;
-  salesUlElem.appendChild(totalSalesElem);
+  let locationTotalTh = document.createElement('th');
+  locationTotalTh.setAttribute('scope', 'col');
+  locationTotalTh.textContent = 'Daily Location Total';
+  tableHead.appendChild(locationTotalTh);
 }
 
-for (let i = 0; i < stores.length; i++) {
-  displayStoreData(stores[i]);
-}
-
-console.log(stores);
+renderTableHeader();
