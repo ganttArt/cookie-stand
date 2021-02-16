@@ -9,10 +9,20 @@ function CookieStore(location, minHourlyCustomers, maxHourlyCustomers, averageCo
   this.averageCookiesPerCustomer = averageCookiesPerCustomer;
   this.hourlyCookiesSold = [];
   this.totalCookiesSold = 0;
+  this.populateHourlyCookiesSold();
 }
 
 CookieStore.prototype.randomCustomersPerHour = function() {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
+
+CookieStore.prototype.populateHourlyCookiesSold = function() {
+  for (let i = 0; i < 14; i++) {
+    let customers = this.randomCustomersPerHour();
+    let cookiesSold = Math.floor(customers * this.averageCookiesPerCustomer);
+    this.hourlyCookiesSold.push(cookiesSold);
+    this.totalCookiesSold += cookiesSold;
+  }
 };
 
 let seattle = new CookieStore('Seattle', 23, 65, 6.3);
@@ -23,16 +33,7 @@ let lima = new CookieStore('Lima', 2, 16, 4.6);
 
 let stores = [seattle, tokyo, dubai, paris, lima];
 
-function populateHourlyCookiesSold(store) {
-  for (let i = 0; i < 14; i++) {
-    let customers = store.randomCustomersPerHour();
-    let cookiesSold = Math.floor(customers * store.averageCookiesPerCustomer);
-    store.hourlyCookiesSold.push(cookiesSold);
-    store.totalCookiesSold += cookiesSold;
-  }
-}
-
-
+// function for class06 to display sotre data in unordered lists
 function displayStoreData(store) {
   let articleDeckElem = document.getElementById('article-deck');
   let articleElem = document.createElement('article');
@@ -58,7 +59,6 @@ function displayStoreData(store) {
 }
 
 for (let i = 0; i < stores.length; i++) {
-  populateHourlyCookiesSold(stores[i]);
   displayStoreData(stores[i]);
 }
 
