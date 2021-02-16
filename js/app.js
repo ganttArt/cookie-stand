@@ -9,10 +9,11 @@ function CookieStore(location, minHourlyCustomers, maxHourlyCustomers, averageCo
   this.averageCookiesPerCustomer = averageCookiesPerCustomer;
   this.hourlyCookiesSold = [];
   this.totalCookiesSold = 0;
-  this.randomCustomersPerHour = function() {
-    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
-  };
 }
+
+CookieStore.prototype.randomCustomersPerHour = function() {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+};
 
 let seattle = new CookieStore('Seattle', 23, 65, 6.3);
 let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
