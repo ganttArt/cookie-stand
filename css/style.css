@@ -1,0 +1,13 @@
+figcaption {
+  font-size: small;
+}
+
+#salmon-img {
+  width: 80%;
+}
+
+@media screen and (min-width: 878px) {
+  #salmon-img {
+    width: 666px;
+  }
+}

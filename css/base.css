@@ -11,7 +11,7 @@ header {
 ul {
   list-style-type: none;
   display: flex;
-  margin: 0 40px;
+  margin: 0;
   align-items: center;
 }
 
