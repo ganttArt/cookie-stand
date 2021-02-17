@@ -11,3 +11,19 @@ figcaption {
     width: 666px;
   }
 }
+
+#locations {
+  width: 50%;
+  border: 2px solid lightsalmon;
+  margin: 60px;
+}
+
+#locations ul{
+  display: block;
+  padding-left: 0;
+  text-align: left;
+}
+
+#locations li {
+  color: black;
+}
