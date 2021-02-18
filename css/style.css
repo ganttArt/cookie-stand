@@ -6,7 +6,7 @@
   width: 80%;
 }
 
-#locations, #hours {
+#locations, #hours, #contact {
   width: 50%;
   border: 2px solid lightsalmon;
   margin: 60px;
@@ -23,6 +23,10 @@
 #locations li {
   color: black;
   padding: 10px 20px;
+}
+
+#family-photo {
+  width: 80%;
 }
 
 #chinook-footer-img {
