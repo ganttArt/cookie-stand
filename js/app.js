@@ -69,6 +69,7 @@ function submitHandler(event) {
   newStore.renderTableRow();
   stores.push(newStore);
   table.deleteRow(-1);
+  hourlyTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   renderTableFooter();
 }
 
