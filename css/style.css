@@ -1,4 +1,4 @@
-figcaption {
+#salmon-img figcaption {
   font-size: small;
 }
 
@@ -6,13 +6,7 @@ figcaption {
   width: 80%;
 }
 
-@media screen and (min-width: 878px) {
-  #salmon-img {
-    width: 666px;
-  }
-}
-
-#locations {
+#locations, #hours {
   width: 50%;
   border: 2px solid lightsalmon;
   margin: 60px;
@@ -21,9 +15,28 @@ figcaption {
 #locations ul{
   display: block;
   padding-left: 0;
+  padding-bottom: 20px;
   text-align: left;
+  list-style-type: none;
 }
 
 #locations li {
   color: black;
+  padding: 10px 20px;
+}
+
+
+
+@media screen and (min-width: 878px) {
+  #salmon-img {
+    width: 666px;
+  }
+  #locations {
+    width: 445px;
+  }
+  #cookies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
