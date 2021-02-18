@@ -65,9 +65,11 @@ function submitHandler(event) {
     parseInt(event.target.maxCustomers.value),
     parseFloat(event.target.avgCookies.value)
   );
-  stores.push(newStore);
 
   newStore.renderTableRow();
+  stores.push(newStore);
+  table.deleteRow(-1);
+  renderTableFooter();
 }
 
 const form = document.getElementById('new-store-form');
