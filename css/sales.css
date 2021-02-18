@@ -4,3 +4,23 @@ table, td, th {
   padding: 10px;
   text-align: center;
 }
+
+form {
+  width: 50%;
+  margin: 30px auto;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 10px auto;
+  width: fit-content;
+}
