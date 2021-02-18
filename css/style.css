@@ -25,7 +25,15 @@
   padding: 10px 20px;
 }
 
+#chinook-footer-img {
+  height: 50px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
 
+footer {
+  text-align: end;
+}
 
 @media screen and (min-width: 878px) {
   #salmon-img {
