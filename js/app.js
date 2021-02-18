@@ -55,6 +55,19 @@ let lima = new CookieStore('Lima', 2, 16, 4.6);
 
 let stores = [seattle, tokyo, dubai, paris, lima];
 
+function submitHandler(event) {
+  event.preventDefault();
+
+  console.log(event.target.storeLocation.value);
+  console.log(event.target.minCustomers.value);
+  console.log(event.target.maxCustomers.value);
+  console.log(event.target.avgCookies.value);
+}
+
+const form = document.getElementById('new-store-form');
+form.addEventListener('submit', submitHandler);
+
+
 function renderTableHeader() {
   const tableHead = document.createElement('tr');
   table.appendChild(tableHead);
