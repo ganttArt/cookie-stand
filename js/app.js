@@ -29,7 +29,8 @@ CookieStore.prototype.populateHourlyCookiesSold = function() {
 
 CookieStore.prototype.renderTableRow = function() {
   let row = document.createElement('tr');
-  table.appendChild(row);
+  let tableBody= document.getElementById('table-body');
+  tableBody.appendChild(row);
 
   let rowTitle = document.createElement('th');
   rowTitle.setAttribute('scope', 'col');
@@ -86,6 +87,12 @@ function renderTableHeader() {
   tableHead.appendChild(locationTotalTh);
 }
 
+function renderTableBody() {
+  let tBody = document.createElement('tbody');
+  tBody.setAttribute('id', 'table-body');
+  table.appendChild(tBody);
+}
+
 function renderTableFooter() {
   let row = document.createElement('tr');
   table.appendChild(row);
@@ -113,6 +120,7 @@ function renderTableFooter() {
 }
 
 renderTableHeader();
+renderTableBody();
 for (let i = 0; i < stores.length; i++) {
   stores[i].renderTableRow();
 }
