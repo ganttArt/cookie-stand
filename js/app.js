@@ -59,10 +59,15 @@ let stores = [seattle, tokyo, dubai, paris, lima];
 function submitHandler(event) {
   event.preventDefault();
 
-  console.log(event.target.storeLocation.value);
-  console.log(event.target.minCustomers.value);
-  console.log(event.target.maxCustomers.value);
-  console.log(event.target.avgCookies.value);
+  let newStore = new CookieStore(
+    event.target.storeLocation.value,
+    parseInt(event.target.minCustomers.value),
+    parseInt(event.target.maxCustomers.value),
+    parseFloat(event.target.avgCookies.value)
+  );
+  stores.push(newStore);
+
+  newStore.renderTableRow();
 }
 
 const form = document.getElementById('new-store-form');
