@@ -37,6 +37,10 @@ h1 {
   font-family: "Trirong", serif;
 }
 
+main h1 {
+  color: salmon;
+}
+
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
