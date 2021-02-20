@@ -44,3 +44,7 @@ main h1 {
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+body {
+  background-color: azure;
+}
