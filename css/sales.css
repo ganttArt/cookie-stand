@@ -3,11 +3,14 @@ table, td, th {
   border-collapse: collapse;
   padding: 10px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
 form {
   width: 50%;
   margin: 30px auto;
+  background-color: white;
 }
 
 fieldset {

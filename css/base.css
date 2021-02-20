@@ -32,3 +32,19 @@ footer {
   height: 100px;
   background-color: lightsalmon;
 }
+
+h1 {
+  font-family: "Trirong", serif;
+}
+
+main h1 {
+  color: salmon;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: azure;
+}
